@@ -7,7 +7,10 @@ import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationClickListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+
+import android.content.Context;
 import android.widget.Toast;
+
 
 
 import android.Manifest;
@@ -28,7 +31,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.google_maps_hw7.databinding.ActivityMapsBinding;
 
-public class MapsActivity extends FragmentActivity implements OnMyLocationButtonClickListener, OnMyLocationClickListener, OnMapReadyCallback, ActivityCompat.OnRequestPermissionsResultCallback {
+public class MapsActivity extends FragmentActivity implements OnMyLocationButtonClickListener, OnMyLocationClickListener, OnMapReadyCallback, ActivityCompat.OnRequestPermissionsResultCallback  {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean permissionDenied = false;
     private GoogleMap mMap;
@@ -71,7 +74,7 @@ public class MapsActivity extends FragmentActivity implements OnMyLocationButton
             mMap.setMyLocationEnabled(true);
             return;
         }
-        PermissionUtils.requestLocationPermissions(MapsActivity.this, LOCATION_PERMISSION_REQUEST_CODE, true);
+        PermissionUtils.requestLocationPermissions(MapsActivity.this, LOCATION_PERMISSION_REQUEST_CODE, false);
     }
 
     @Override
@@ -102,9 +105,6 @@ public class MapsActivity extends FragmentActivity implements OnMyLocationButton
             // Enable the my location layer if the permission has been granted.
             enableMyLocation();
         } else {
-            // Permission was denied. Display an error message
-            // Display the missing permission error dialog when the fragments resume.
-            permissionDenied = true;
         }
     }
     @Override
@@ -118,7 +118,7 @@ public class MapsActivity extends FragmentActivity implements OnMyLocationButton
         }
 
 
+        }
+
+
     }
-
-
-}

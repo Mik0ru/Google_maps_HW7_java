@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         });
         ImageView imageView = viewBinding.ImageView;
         Picasso.get()
-                .load("https://media.tenor.com/HGwWkWXhzdMAAAAM/%D0%B4%D0%B6%D0%BE%D0%BA%D0%B5%D1%80-joker.gif")
+                .load(  "https://media.tenor.com/HGwWkWXhzdMAAAAM/%D0%B4%D0%B6%D0%BE%D0%BA%D0%B5%D1%80-joker.gif")
                 .resize(300,300)
                 .centerCrop()
                 .placeholder(R.color.black)
