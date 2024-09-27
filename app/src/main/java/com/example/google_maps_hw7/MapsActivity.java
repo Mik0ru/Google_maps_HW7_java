@@ -104,21 +104,11 @@ public class MapsActivity extends FragmentActivity implements OnMyLocationButton
                         Manifest.permission.ACCESS_COARSE_LOCATION)) {
             // Enable the my location layer if the permission has been granted.
             enableMyLocation();
-        } else {
         }
     }
     @Override
     protected void onResumeFragments() {
-        super.onResumeFragments();
-        if (permissionDenied) {
-            // Permission was not granted, display error dialog.
-            PermissionUtils.PermissionDeniedDialog
-                    .newInstance(true).show(getSupportFragmentManager(), "dialog");
-            permissionDenied = false;
-        }
 
 
-        }
 
-
-    }
+    }}
